@@ -13,7 +13,8 @@ init:
 	sed "s/dayXX/day$$PADDED_DAY/g" tmpl/solve.go > $$DIR/solve.go; \
 	sed "s/dayXX/day$$PADDED_DAY/g" tmpl/solve_test.go > $$DIR/solve_test.go; \
 	touch $$DIR/input.txt; \
-	echo "Created $$DIR with solve.go, solve_test.go, and input.txt"
+	touch $$DIR/example.txt; \
+	echo "Created $$DIR with solve.go, solve_test.go, input.txt and example.txt"
 
 day-%:
 	go test ./day$* -v
