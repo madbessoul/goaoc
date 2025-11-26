@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func makeMatrixFromText(text string) [][]string {
+func MakeMatrixFromText(text string) [][]string {
 	var matrix [][]string
 	var lines = strings.Split(text, "\n")
 
