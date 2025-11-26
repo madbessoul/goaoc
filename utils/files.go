@@ -21,3 +21,18 @@ func ReadInput() string {
 
 	return string(content)
 }
+
+func ReadExample() string {
+	_, file, _, ok := runtime.Caller(1)
+	if !ok {
+		panic("Failed to get caller information")
+	}
+
+	filePath := fmt.Sprintf("%s/example.txt", filepath.Dir(file))
+	content, err := os.ReadFile(filePath)
+	if err != nil {
+		panic(fmt.Sprintf("File not found for path: %s", err.Error()))
+	}
+
+	return string(content)
+}
