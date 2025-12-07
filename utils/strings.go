@@ -17,3 +17,17 @@ func MakeMatrixFromText(text string) [][]string {
 	}
 	return matrix
 }
+
+func MakeCharacterMatrixFromText(text string) [][]rune {
+	var matrix [][]rune
+	var lines = strings.Split(text, "\n")
+
+	for _, line := range lines {
+		if strings.TrimSpace(line) == "" {
+			continue
+		}
+		fields := strings.Fields(line)
+		matrix = append(matrix, []rune(fields[0]))
+	}
+	return matrix
+}
